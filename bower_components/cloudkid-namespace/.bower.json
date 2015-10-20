@@ -1,0 +1,29 @@
+{
+  "name": "namespace",
+  "version": "1.2.0",
+  "main": "dist/namespace.min.js",
+  "devDependencies": {
+    "bind-polyfill": "*",
+    "qunit": "*"
+  },
+  "ignore": [
+    "src",
+    "test",
+    ".bowerrc",
+    ".gitignore",
+    ".travis.yml",
+    "Gruntfile.js",
+    "library.json",
+    "package.json"
+  ],
+  "homepage": "https://github.com/CloudKidStudio/namespace",
+  "_release": "1.2.0",
+  "_resolution": {
+    "type": "version",
+    "tag": "1.2.0",
+    "commit": "77185bca83815342f237ee33167a3c06e678ed00"
+  },
+  "_source": "git://github.com/CloudKidStudio/namespace.git",
+  "_target": "*",
+  "_originalSource": "cloudkid-namespace"
+}

@@ -1,0 +1,16 @@
+{
+	"name": "MoGrabber",
+	"private": true,
+	"version": "0.0.1",
+	"dependencies": {
+		"grunt": "~0.4.5",
+		"grunt-exec": "~0.4.6",
+		"grunt-node-webkit-builder": "~1.0.0",
+		"lodash": "~3.0.0",
+		"project-grunt": "*"
+	},
+  "devDependencies": {
+	"grunt-ftp-deploy": "^0.1.10",
+	"grunt-rename": "^0.1.4"
+  }
+}

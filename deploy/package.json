@@ -1,0 +1,35 @@
+{
+  "name": "MoGrabber",
+  "description": "ReUpload to UL from FC",
+  "version": "0.0.1",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/username/MyApp"
+  },
+  "main": "index.html",
+  "single-instance": true,
+  "window": {
+    "icon": "assets/images/icon.png",
+    "show": true,
+    "toolbar": true,
+    "frame": true,
+    "position": "center",
+    "width": 680,
+    "height": 800,
+    "min_width": 400,
+    "min_height": 275,
+    "resizable": true
+  },
+  "webkit": {
+    "plugin": true
+  },
+  "dependencies": {
+    "material-design-lite": "^1.0.5",
+    "lwip": "0.0.8",
+    "request": "*",
+    "ini": "*",
+    "moment": "*",
+    "cheerio": "*"
+  }
+
+}
