@@ -4,13 +4,11 @@
 		<meta charset="utf-8">
 		<title>MoGrabber</title>
 		<link href="assets/css/libraries.css" rel="stylesheet">
-		<link href="assets/css/main.css" rel="stylesheet">
 		<link href="assets/css/avgrund.css" rel="stylesheet">
 
 		<link href="node_modules/material-design-lite/dist/material.css" rel="stylesheet">
 
 		<link href="node_modules/material-design-lite/dist/material-grid.min.css" rel="stylesheet">
-		<link href="assets/css/main.css" rel="stylesheet">
 
 		<script src="assets/js/libraries.js"></script>
 		<script src="assets/js/main.js"></script>
@@ -20,6 +18,7 @@
 		<script src="assets/js/avgrund.js"></script>
 
 		<script src="assets/js/mainContent.js"></script>
+		<script src="assets/js/rightClick.js"></script>
 
 
 		<style>
@@ -56,7 +55,7 @@
 		<header class="mdl-layout__header">
 			<div class="mdl-layout__header-row">
 				<!-- Title -->
-				<span class="mdl-layout-title">B.U.S.T</span>
+				<span class="mdl-layout-title">MoGrabber</span>
 			</div>
 
 		</header>
@@ -66,18 +65,20 @@
 		<main class="mdl-layout__content">
 			<section class="mdl-layout__tab-panel is-active">
 				<div class="page-content">
-					<div style="width:100%; overflow: hidden;">
-						<div style="width: 49%; float:left; margin: 0 auto; display:block;">Not Linked: <br/>
-						<input type="text" id="notLinkedSearch" style="width: 100%">
-						</div>
-						<div style="width: 49%; float:right; margin: 0 auto; display:block;">Linked <br/>
-							<input id="linkedSearch" type="text" style="width: 100%">
-						</div>
-					</div> <br />
-					<select id="notLinked" size="6" style="width: 49%; float:left; margin: 0 auto; display:block;"></select>
+					Grabber-Seiten: <br />
 
-					<select id="linkedExist" size="6" style="width: 49%; float:right; margin: 0 auto; display:block;"></select>
-					<br  style="clear:both;"/>
+					<select id="grabPath" size="6" style="width: 75%; margin: 0 auto; display:block; float:left;">
+
+					</select>
+					<div style="float:left; width: 25%; box-sizing: border-box; padding-left: 10px;">
+						<button id="btnNew" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect">
+						Neu
+						</button> <br /> <br />
+						<button id="btnDelete" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect">
+							Löschen
+						</button>
+					</div>
+					<br style="clear:both"/> <br />
 					Log: <br />
 
 					<select id="log" size="6" style="width: 100%; margin: 0 auto; display:block;">
@@ -88,33 +89,50 @@
 				<button id="btnLog" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect">
 					Clear Log
 				</button>
-					<button id="btnReload" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect">
-						Reload
-					</button>
-					<button id="btnReloadConfig" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect">
-						Reload Config
-					</button>
-					<br /> <br/>
 					<button id="btnStart" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect">
 						Start
 					</button>
 					<button id="btnStop" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect">
-						Stop
-					</button>
-					<button id="btnClearSearch" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect">
-						Clear Search
-					</button>
+					Stop
+				</button>
+					<div style="clear:left; text-align:left; box-sizing: border-box; padding: 25px;">
+						<div class="winrar" style="width:33%; float:left;"><Button id="jdownloader_dir">JD-Downloader-Ordner</Button> <br />
+							<p><input type="text" id="fakeJDDir" style="margin-top: 8px" readonly> </p>
+						</div>
+						<div class="winrar" style="width:33%; float:left;"><Button id="doneRls">Fertige Downloads</Button> <br />
+							<p><input type="text" id="fakeDoneRls" style="margin-top: 8px" readonly> </p>
+						</div>
+						<div class="winrar" style="width:33%; float:left;"></div>
 					</div>
+					<div style="clear:left; text-align:left; box-sizing: border-box; padding: 25px;">
+						<div class="winrar" style="width:33%; float:left;">
+							<input type="text" id="jd_user"style="margin-top: 8px" placeholder="JD-User">
+							<input type="text" id="jd_pw" style="margin-top: 8px" placeholder="JD-Passwort">
+							<input type="text" id="jd_device_id" style="margin-top: 8px" placeholder="JD-Device-ID">
+
+							<Button style="margin-top: 8px" id="save_jdownloader">Speichern</Button>
+
+						</div>
+						<div class="winrar" style="width:33%; float:left;"><Button id="tmpDirBtn">Temporärer-Ordner</Button> <br />
+							<p><input type="text" id="fakeTmpDir" style="margin-top: 8px" readonly> </p>
+						</div>
+                        <div class="winrar" style="width:33%; float:left;">
+                            <input type="number" id="timeInterval" placeholder="Such-Interval in Minuten">
+                            <Button id="saveInterval" style="margin-top:8px">Speichern</Button>
+                        </div>
+					</div>
+					</div>
+				<input type="file" style="display:none;" id="jdDLPath" nwdirectory>
+				<input type="file" style="display:none;" id="doneRlsDir" nwdirectory>
+				<input type="file" style="display:none;" id="tempPath" nwdirectory>
+
 			</section>
 		</main>
 	</div>
 
 	<!-- MODAL -->
 	<aside id="default-popup" class="avgrund-popup">
-		<h3 id="dataID"> </h3>
-		<input type="file" id="saveDir" nwdirectory style="display:none"/>
-		<Button id="saveDirButton"> Select Directory</Button> <br />
-		<input type="text" readonly id="saveDirFake" style="width: 100%"> <br/> <br />
+        <input type="text" id="newGrabEntry"> <br />
 		<button id="modalSave">Save</button>
 
 		<button onclick="Avgrund.hide();">Close</button>

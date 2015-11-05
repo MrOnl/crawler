@@ -2,8 +2,8 @@ module.exports = {
 	appModules : {
 		command: 'npm install',
 		cwd: '<%= distFolder %>',
-		stdout: false,
-	    stderr: false
+		stdout: true,
+	    stderr: true
 	},
 	"packagewin32": {
 		cmd: 'makensis <%= installerDir %>/win32.nsi'

@@ -11,25 +11,19 @@
   "window": {
     "icon": "assets/images/icon.png",
     "show": true,
-    "toolbar": true,
+    "toolbar": false,
     "frame": true,
     "position": "center",
     "width": 680,
-    "height": 800,
+    "height": 742,
     "min_width": 400,
     "min_height": 275,
     "resizable": true
   },
   "webkit": {
-    "plugin": true
+    "plugin": false
   },
   "dependencies": {
-    "material-design-lite": "^1.0.5",
-    "lwip": "0.0.8",
-    "request": "*",
-    "ini": "*",
-    "moment": "*",
-    "cheerio": "*"
+    "material-design-lite": "^1.0.0-3"
   }
-
 }
