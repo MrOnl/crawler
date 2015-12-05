@@ -187,9 +187,9 @@ module.exports = {
                 }
             }
             console.log(content_json);
-            if(content_json.rid != self.rid_counter) {
-                return callback(true, "RID_MISMATCH");
-            }
+           // if(content_json.rid != self.rid_counter) {
+           //     return callback(true, "RID_MISMATCH");
+           // }
             return callback(null, body);
         });
     }
